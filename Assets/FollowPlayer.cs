@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.position.y > transform.position.y) //kamera ikut player
+        if (player.position.y < transform.position.y) //kamera ikut player
         {
             transform.position = new Vector3(transform.position.x, player.position.y,transform.position.z); //ketika player ke atas
         }

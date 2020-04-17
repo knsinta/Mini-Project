@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {   
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public string currentColor;
+    public AudioSource bounce;
 
     public Color colorBiru;
     public Color colorKuning;
@@ -21,7 +23,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
         {
-            rb.velocity = Vector2.up * jumpForce;//kecepatan player    
+            rb.velocity = Vector2.up * jumpForce;//kecepatan player   
+            bounce.Play(); 
         }
     }
 
@@ -37,10 +40,11 @@ public class Player : MonoBehaviour
         if (col.tag != currentColor)//==: pass anything happen
         {
             Debug.Log("GAME OVER!");
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 
-    void SetRandomColor ()
+    void SetRandomColor () //fungsi warna random
     {
         int index = Random.Range(0, 4);
 

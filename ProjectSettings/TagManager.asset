@@ -9,6 +9,8 @@ TagManager:
   - Pink
   - Ungu
   - ColorChanger
+  - FinishLine
+  - Lollipop
   layers:
   - Default
   - TransparentFX
